@@ -3,9 +3,11 @@ package com.example.lab6;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -88,5 +90,10 @@ public class MainActivity extends AppCompatActivity {
         GridView gridView = findViewById(R.id.gridView);
         gridView.setAdapter(cubeeAdapter);
         gridView.setNumColumns(3);
+
+        String[] messageArray = new String[]{"訊息1", "訊息2", "訊息3", "訊息4", "訊息5", "訊息6"};
+        ArrayAdapter<String> messageAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, messageArray);
+        ListView listView = findViewById(R.id.listView);
+        listView.setAdapter(messageAdapter);
     }
 }
